@@ -66,6 +66,8 @@ jobs:
       - uses: actions/setup-java@v4
         with: { distribution: temurin, java-version: 17 }
       - uses: android-actions/setup-android@v3
+      - name: Install Android NDK
+        run: sdkmanager --install "ndk;27.0.12077973"
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
       - run: npm ci
@@ -74,7 +76,7 @@ jobs:
       - name: Build Android APK
         run: npx tauri android build --apk
         env:
-          NDK_HOME: ${{ env.ANDROID_NDK_HOME }}
+          NDK_HOME: /usr/local/lib/android/sdk/ndk/27.0.12077973
       - uses: actions/upload-artifact@v4
         with:
           name: android-apk
@@ -93,7 +95,7 @@ jobs:
       - name: Init iOS
         run: npx tauri ios init
       - name: Build iOS
-        run: npx tauri ios build --export-method development
+        run: npx tauri ios build --export-method debugging
       - uses: actions/upload-artifact@v4
         with:
           name: ios-app
