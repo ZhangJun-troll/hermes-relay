@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>Hermes Relay</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xterm/xterm@5.5.0/css/xterm.css">
+<style>
+:root{
+  --glass-bg:rgba(255,255,255,0.08);
+  --glass-border:rgba(255,255,255,0.12);
+  --glass-blur:20px;
+  --accent:#0ea5e9;
+  --text:#f0e6d2;
+  --text-dim:#888;
+  --bg:#0a0a0a;
+  --card:#1a1a1a;
+  --safe-top:env(safe-area-inset-top,0px);
+  --safe-bottom:env(safe-area-inset-bottom,0px);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif;color:var(--text);overflow:hidden}
+body{padding-top:var(--safe-top);padding-bottom:var(--safe-bottom)}
+
+/* ── Liquid Glass ── */
+.glass{
+  background:var(--glass-bg);
+  backdrop-filter:saturate(180%) blur(var(--glass-blur));
+  -webkit-backdrop-filter:saturate(180%) blur(var(--glass-blur));
+  border:1px solid var(--glass-border);
+  border-radius:16px;
+}
+.glass-sm{border-radius:12px;--glass-blur:12px}
+.glass-lg{border-radius:24px;--glass-blur:30px}
+
+/* ── Pages ── */
+.page{display:none;height:100%;flex-direction:column}
+.page.active{display:flex}
+
+/* ── Settings Page ── */
+#settings{align-items:center;justify-content:center;padding:1.5rem;background:var(--bg)}
+#settings .card{width:min(92vw,380px);padding:2rem}
+#settings h1{font-size:1.5rem;font-weight:700;text-align:center;margin-bottom:.25rem}
+#settings .subtitle{color:var(--text-dim);font-size:.8rem;text-align:center;margin-bottom:1.5rem}
+#settings label{display:block;font-size:.75rem;color:var(--text-dim);margin-bottom:.35rem;margin-top:1rem}
+#settings input,#settings select{
+  width:100%;padding:.7rem .9rem;border:1px solid var(--glass-border);border-radius:10px;
+  background:rgba(0,0,0,0.3);color:var(--text);font-size:.95rem;outline:none;
+  transition:border-color .2s;
+}
+#settings input:focus,#settings select:focus{border-color:var(--accent)}
+#settings select option{background:var(--card);color:var(--text)}
+#settings .err{color:#ef4444;font-size:.8rem;margin-top:.5rem;display:none}
+#settings .hint{color:var(--text-dim);font-size:.7rem;text-align:center;margin-top:1rem}
+#settings button{
+  width:100%;padding:.75rem;border:none;border-radius:12px;margin-top:1.5rem;
+  background:var(--accent);color:#fff;font-size:1rem;font-weight:600;cursor:pointer;
+  transition:transform .1s,opacity .2s;
+}
+#settings button:active{transform:scale(0.97);opacity:0.8}
+#settings button:disabled{opacity:0.4}
+
+/* ── Terminal Page ── */
+#terminal{position:relative}
+#term-host{flex:1;overflow:hidden}
+#term{height:100%;width:100%}
+#status-pill{
+  position:fixed;top:calc(12px + var(--safe-top));right:12px;
+  padding:5px 12px;font-size:.7rem;font-weight:600;z-index:20;
+  transition:opacity .4s;pointer-events:none;
+}
+#status-pill.connected{background:rgba(34,197,94,0.15);color:#22c55e;border:1px solid rgba(34,197,94,0.25)}
+#status-pill.connecting{background:rgba(234,179,8,0.15);color:#eab308;border:1px solid rgba(234,179,8,0.25)}
+#status-pill.disconnected{background:rgba(239,68,68,0.15);color:#ef4444;border:1px solid rgba(239,68,68,0.25)}
+#toolbar{
+  position:fixed;bottom:calc(10px + var(--safe-bottom));right:10px;
+  display:flex;gap:6px;z-index:20;
+}
+#toolbar button{
+  background:rgba(20,20,20,0.7);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border:1px solid var(--glass-border);color:#999;
+  padding:7px 12px;border-radius:10px;font-size:.7rem;cursor:pointer;
+}
+#toolbar button:active{color:var(--text);border-color:var(--accent)}
+
+/* ── iOS status bar spacer ── */
+@supports(-webkit-touch-callout:none){
+  #settings{padding-top:calc(var(--safe-top) + 1rem)}
+}
+</style>
+</head>
+<body>
+
+<!-- Settings Page -->
+<div id="settings" class="page active">
+  <div class="card glass glass-lg">
+    <h1>🤖 Hermes Relay</h1>
+    <div class="subtitle">连接你的 AI Agent</div>
+    <label for="server">服务器地址</label>
+    <input id="server" type="url" placeholder="wss://1.2.3.4:8080" spellcheck="false">
+    <label for="agent-sel">选择 Agent</label>
+    <select id="agent-sel"><option value="">请先输入服务器地址</option></select>
+    <label for="pw">密码</label>
+    <input id="pw" type="password" placeholder="输入密码" autocomplete="current-password">
+    <div class="err" id="login-err"></div>
+    <button id="btn-connect" onclick="doConnect()">连接</button>
+    <div class="hint">地址格式: wss://IP:端口 或 ws://IP:端口</div>
+  </div>
+</div>
+
+<!-- Terminal Page -->
+<div id="terminal" class="page">
+  <div id="status-pill" class="glass-sm connecting">连接中...</div>
+  <div id="term-host"><div id="term"></div></div>
+  <div id="toolbar">
+    <button onclick="doReconnect()">↻</button>
+    <button onclick="doNewSession()">+</button>
+    <button onclick="doDisconnect()">✕</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@xterm/xterm@5.5.0/lib/xterm.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@xterm/addon-fit@0.10.0/lib/addon-fit.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@xterm/addon-web-links@0.11.0/lib/addon-web-links.js"></script>
+<script>
+/* ── ponytail: single-file app, no build step ── */
+const $=s=>document.querySelector(s);
+const FitAddon=window.FitAddon?.FitAddon;
+const WebLinksAddon=window.WebLinksAddon?.WebLinksAddon;
+let term,ws,fitAddon,currentAgent='',currentPw='',currentServer='';
+
+/* ── Persistence ── */
+function saveSettings(){
+  try{localStorage.setItem('hr_server',$('#server').value)}catch{}
+}
+function loadSettings(){
+  try{
+    const s=localStorage.getItem('hr_server');
+    if(s)$('#server').value=s;
+  }catch{}
+}
+
+/* ── Agent discovery ── */
+let fetchTimer=null;
+$('#server').addEventListener('input',()=>{
+  clearTimeout(fetchTimer);
+  fetchTimer=setTimeout(fetchAgents,600);
+});
+
+async function fetchAgents(){
+  const url=$('#server').value.trim().replace(/^wss:/,'https:').replace(/^ws:/,'http:');
+  if(!url){$('#agent-sel').innerHTML='<option value="">请输入服务器地址</option>';return}
+  try{
+    const r=await fetch(url+'/agents',{signal:AbortSignal.timeout(5000)});
+    const d=await r.json();
+    const sel=$('#agent-sel');
+    sel.innerHTML='';
+    if(!d.length){sel.innerHTML='<option value="">无可用 Agent</option>';return}
+    d.forEach(a=>{const o=document.createElement('option');o.value=a.id;o.textContent=a.name+' ('+a.id.slice(0,6)+')';sel.appendChild(o)});
+  }catch(e){$('#agent-sel').innerHTML='<option value="">无法连接服务器</option>'}
+}
+
+/* ── Connect ── */
+async function doConnect(){
+  const server=$('#server').value.trim();
+  const agent=$('#agent-sel').value;
+  const pw=$('#pw').value;
+  if(!server||!agent||!pw){showErr('请填写所有字段');return}
+  currentServer=server;currentAgent=agent;currentPw=pw;
+  saveSettings();
+  connectWS(server,agent,pw,false);
+}
+
+function connectWS(server,agent,pw,fresh){
+  if(ws){try{ws.close()}catch{}}
+  showPage('terminal');
+  setStatus('connecting','连接中...');
+  let url=server+'/ws/client?agent='+encodeURIComponent(agent)+'&password='+encodeURIComponent(pw);
+  if(fresh)url+='&fresh=1';
+  ws=new WebSocket(url);
+  ws.binaryType='arraybuffer';
+  ws.onopen=()=>{
+    setStatus('connected','已连接');
+    if(!term)initTerm();
+    setTimeout(()=>{if(fitAddon)fitAddon.fit()},150);
+  };
+  ws.onmessage=e=>{
+    if(!term)return;
+    if(e.data instanceof ArrayBuffer)term.write(new Uint8Array(e.data));
+    else term.write(e.data);
+  };
+  ws.onclose=e=>{
+    if(e.code===4001){showErr('密码错误');doDisconnect();return}
+    if(e.code===4004){showErr('Agent 不在线');doDisconnect();return}
+    setStatus('disconnected','断开 ('+e.code+')');
+  };
+  ws.onerror=()=>setStatus('disconnected','连接失败');
+}
+
+/* ── Terminal ── */
+function initTerm(){
+  term=new Terminal({
+    cursorBlink:true,fontSize:getFontSize(),
+    fontFamily:"-apple-system,'SF Mono','Cascadia Mono','Fira Code',Menlo,monospace",
+    lineHeight:1.15,
+    theme:{background:'#0a0a0a',foreground:'#f0e6d2',cursor:'#f0e6d2',selectionBackground:'rgba(240,230,210,0.2)'},
+    allowProposedApi:true,macOptionIsMeta:true,
+  });
+  fitAddon=new FitAddon();term.loadAddon(fitAddon);
+  if(WebLinksAddon)term.loadAddon(new WebLinksAddon());
+  term.open($('#term'));fitAddon.fit();
+  term.onData(d=>{if(ws?.readyState===1)ws.send(d)});
+  term.onResize(({cols,rows})=>{if(ws?.readyState===1)ws.send('\x1b[RESIZE:'+cols+';'+rows+']')});
+  new ResizeObserver(()=>{if(fitAddon)fitAddon.fit()}).observe($('#term-host'));
+}
+function getFontSize(){return window.innerWidth<380?11:window.innerWidth<600?13:15}
+
+/* ── Navigation ── */
+function showPage(name){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  $('#'+name).classList.add('active');
+}
+function setStatus(cls,text){const p=$('#status-pill');p.className='glass-sm '+cls;p.textContent=text;p.style.opacity='1';if(cls==='connected'){clearTimeout(p._t);p._t=setTimeout(()=>p.style.opacity='0',3000)}}
+function showErr(msg){const e=$('#login-err');e.textContent=msg;e.style.display='block';setTimeout(()=>e.style.display='none',4000)}
+function doReconnect(){if(currentServer&&currentAgent)connectWS(currentServer,currentAgent,currentPw,false)}
+function doNewSession(){if(currentServer&&currentAgent)connectWS(currentServer,currentAgent,currentPw,true)}
+function doDisconnect(){if(ws)ws.close();showPage('settings')}
+
+/* ── Init ── */
+loadSettings();
+if($('#server').value)fetchAgents();
+</script>
+</body>
+</html>
