@@ -73,6 +73,8 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
       - run: npm ci
+      - name: Init Android
+        run: npx tauri android init
       - name: Build Android APK
         run: npx tauri android build --apk --target aarch64
         env:
