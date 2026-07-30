@@ -81,13 +81,19 @@ jobs:
           NDK_HOME: /usr/local/lib/android/sdk/ndk/27.0.12077973
           ANDROID_HOME: /usr/local/lib/android/sdk
           JAVA_HOME: ${{ env.JAVA_HOME }}
+      - name: Sign APK
+        run: |
+          keytool -genkey -v -keystore /tmp/hermes.keystore -alias hermes -keyalg RSA -keysize 2048 -validity 10000 -storepass hermes123 -keypass hermes123 -dname "CN=Hermes, OU=Relay, O=Hermes, L=Shanghai, ST=SH, C=CN"
+          UNSIGNED_APK=$(find src-tauri/gen/android -name "*.apk" | head -1)
+          cp "$UNSIGNED_APK" /tmp/unsigned.apk
+          zipalign -v 4 /tmp/unsigned.apk /tmp/aligned.apk
+          apksigner sign --ks /tmp/hermes.keystore --ks-pass pass:hermes123 --key-pass pass:hermes123 --out signed.apk /tmp/aligned.apk
+          cp signed.apk hermes-relay.apk
       - uses: actions/upload-artifact@v4
         if: success()
         with:
           name: android-apk
-          path: |
-            src-tauri/gen/android/app/build/outputs/apk/**/*.apk
-            src-tauri/gen/android/app/build/outputs/apk/debug/*.apk
+          path: hermes-relay.apk
 
   release:
     needs: [build-linux, build-windows, build-macos, build-android]
