@@ -85,11 +85,11 @@ jobs:
         run: |
           keytool -genkey -v -keystore /tmp/hermes.keystore -alias hermes -keyalg RSA -keysize 2048 -validity 10000 -storepass hermes123 -keypass hermes123 -dname "CN=Hermes, OU=Relay, O=Hermes, L=Shanghai, ST=SH, C=CN"
           UNSIGNED_APK=$(find src-tauri/gen/android -name "*.apk" | head -1)
-          cp "$UNSIGNED_APK" /tmp/unsigned.apk
           BUILD_TOOLS=$(ls -d $ANDROID_HOME/build-tools/*/ | sort -V | tail -1)
-          $BUILD_TOOLS/zipalign -v 4 /tmp/unsigned.apk /tmp/aligned.apk
-          $BUILD_TOOLS/apksigner sign --ks /tmp/hermes.keystore --ks-pass pass:hermes123 --key-pass pass:hermes123 --out signed.apk /tmp/aligned.apk
-          cp signed.apk hermes-relay.apk
+          $BUILD_TOOLS/zipalign -p 4 "$UNSIGNED_APK" aligned.apk
+          cp aligned.apk hermes-relay.apk
+          $BUILD_TOOLS/apksigner sign --ks /tmp/hermes.keystore --ks-pass pass:hermes123 --key-pass pass:hermes123 hermes-relay.apk
+          $BUILD_TOOLS/apksigner verify hermes-relay.apk
       - uses: actions/upload-artifact@v4
         if: success()
         with:
