@@ -1,0 +1,1740 @@
+[
+  {
+    "id": "ai-ml/agent-audit-logging",
+    "name": "Agent Audit Log Reporting",
+    "description": "Implement comprehensive audit logging and reporting for multi-agent systems. Covers event capture, s",
+    "category": "AI / ML",
+    "tags": [
+      "audit-logging",
+      "compliance",
+      "observability"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "ai-ml/agent-handoff-protocols",
+    "name": "Agent-to-Agent Handoff Protocols",
+    "description": "Design and implement agent-to-agent handoff protocols for multi-agent systems. Covers context passin",
+    "category": "AI / ML",
+    "tags": [
+      "agent-handoff",
+      "escalation",
+      "context-passing"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "ai-ml/agent-health-monitoring",
+    "name": "Agent Health Monitoring & Alerting",
+    "description": "Monitor AI agent health, detect anomalies, set up alerting, and maintain observability dashboards fo",
+    "category": "AI / ML",
+    "tags": [
+      "agent-monitoring",
+      "observability",
+      "alerting"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "ai-ml/agent-task-delegation",
+    "name": "Agent Task Delegation & Load Balancing",
+    "description": "Design and operate task delegation systems for multi-agent fleets. Covers workload distribution, loa",
+    "category": "AI / ML",
+    "tags": [
+      "task-delegation",
+      "load-balancing",
+      "queue-management"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "ai-ml/ai-agent-design",
+    "name": "AI Agent Design",
+    "description": "Comprehensive guide to designing, building, and operating AI agents. Covers agent architecture, tool",
+    "category": "AI / ML",
+    "tags": [
+      "ai-agents",
+      "agent-architecture",
+      "tool-use"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "ai-ml/error-recovery-retry",
+    "name": "Error Recovery & Retry Logic for Agents",
+    "description": "Design robust error recovery, retry logic, and fallback strategies for production AI agents. Covers ",
+    "category": "AI / ML",
+    "tags": [
+      "error-recovery",
+      "retry-logic",
+      "circuit-breaker"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "ai-ml/gbrain-lite",
+    "name": "GBrain Lite — Lightweight Personal Knowledge Base",
+    "description": "Lightweight personal knowledge base — markdown + YAML frontmatter structured notes with full-text se",
+    "category": "AI / ML",
+    "tags": [
+      "knowledge-base",
+      "memory-management",
+      "markdown"
+    ],
+    "github": "",
+    "author": "myuxin007"
+  },
+  {
+    "id": "ai-ml/memory-management",
+    "name": "Memory Management for Long-Running Agents",
+    "description": "Design and operate memory systems for long-running AI agents. Covers context window optimization, su",
+    "category": "AI / ML",
+    "tags": [
+      "memory-management",
+      "context-window",
+      "vector-database"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "ai-ml/prompt-engineering",
+    "name": "Prompt Engineering",
+    "description": "Master the art and science of crafting effective prompts for large language models. Covers foundatio",
+    "category": "AI / ML",
+    "tags": [
+      "prompt-engineering",
+      "llm",
+      "chain-of-thought"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "ai-ml/prompt-version-management",
+    "name": "Prompt Version Management & A/B Testing",
+    "description": "Manage prompt versions, run A/B tests across agent prompts, track performance regressions, and safel",
+    "category": "AI / ML",
+    "tags": [
+      "prompt-management",
+      "version-control",
+      "a-b-testing"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "ai-ml/token-budget-tracking",
+    "name": "Token Budget Tracking & Optimization",
+    "description": "Track, optimize, and control token consumption across multi-agent systems. Covers budget allocation,",
+    "category": "AI / ML",
+    "tags": [
+      "token-budget",
+      "cost-optimization",
+      "token-tracking"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "automation/daily-briefing",
+    "name": "Daily AI Audio Briefing",
+    "description": "Automated daily tech briefing — multi-source collection → knowledge-base deduplication → AI summariz",
+    "category": "Automation",
+    "tags": [
+      "briefing",
+      "tts",
+      "news-aggregation"
+    ],
+    "github": "",
+    "author": "myuxin007"
+  },
+  {
+    "id": "automation/screenshot",
+    "name": "Screenshot Skill",
+    "description": "Capture high-fidelity screenshots of any website using Playwright — supports custom viewports, dark/",
+    "category": "Automation",
+    "tags": [
+      "playwright",
+      "screenshot",
+      "browser-automation"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "automation/shell-scripting",
+    "name": "Shell Scripting",
+    "description": "Master shell scripting best practices, error handling, portability, debugging, and performance optim",
+    "category": "Automation",
+    "tags": [
+      "shell-scripting",
+      "bash",
+      "posix"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "automation/twitter-account-manager",
+    "name": "Twitter Account Manager 🧪",
+    "description": "EDUCATIONAL / RESEARCH ONLY — Single-account always-on Twitter/X manager driven by cookies + headles",
+    "category": "Automation",
+    "tags": [
+      "twitter",
+      "x",
+      "social-media"
+    ],
+    "github": "",
+    "author": "hotheadhacker"
+  },
+  {
+    "id": "automation/workflow-automation",
+    "name": "Workflow Automation",
+    "description": "Master workflow design, n8n patterns, automation triggers, error handling, and monitoring for reliab",
+    "category": "Automation",
+    "tags": [
+      "workflow-automation",
+      "n8n",
+      "triggers"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "automation/x-twitter-automation",
+    "name": "X/Twitter Automation",
+    "description": "Design safe X/Twitter automation workflows for tweet search, reply reads, monitoring, posting, and a",
+    "category": "Automation",
+    "tags": [
+      "x-twitter",
+      "social-media",
+      "tweet-search"
+    ],
+    "github": "",
+    "author": "Xquik-dev"
+  },
+  {
+    "id": "backend/api-design",
+    "name": "API Design",
+    "description": "REST and GraphQL API design principles, versioning, error handling, and documentation patterns",
+    "category": "Backend",
+    "tags": [
+      "api",
+      "rest",
+      "graphql"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "backend/authentication-authorization",
+    "name": "Authentication & Authorization",
+    "description": "JWT, OAuth2, SAML, session management, RBAC, ABAC, and MFA implementation",
+    "category": "Backend",
+    "tags": [
+      "authentication",
+      "authorization",
+      "security"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "backend/caching-strategies",
+    "name": "Caching Strategies",
+    "description": "CDN, Redis, in-memory cache, cache invalidation, and distributed caching patterns",
+    "category": "Backend",
+    "tags": [
+      "caching",
+      "performance",
+      "redis"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "backend/database-design",
+    "name": "Database Design",
+    "description": "Schema design, normalization, indexing, migrations, and query optimization for SQL and NoSQL",
+    "category": "Backend",
+    "tags": [
+      "database",
+      "sql",
+      "nosql"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "backend/message-queues",
+    "name": "Message Queues",
+    "description": "RabbitMQ, Kafka, SQS, pub/sub, competing consumers, dead letter queues, and event streaming",
+    "category": "Backend",
+    "tags": [
+      "message-queues",
+      "kafka",
+      "rabbitmq"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "backend/microservices",
+    "name": "Microservices",
+    "description": "Service boundaries, communication patterns, event sourcing, CQRS, and distributed tracing",
+    "category": "Backend",
+    "tags": [
+      "microservices",
+      "architecture",
+      "distributed-systems"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "backend/nodejs-patterns",
+    "name": "Node.js Patterns",
+    "description": "Async control flow, error handling, module design, streams, and production hardening",
+    "category": "Backend",
+    "tags": [
+      "nodejs",
+      "backend",
+      "javascript"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "backend/python-patterns",
+    "name": "Python Patterns",
+    "description": "Python best practices including type hints, async patterns, testing, and project structure",
+    "category": "Backend",
+    "tags": [
+      "python",
+      "type-hints",
+      "async"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "backend/serverless-patterns",
+    "name": "Serverless Patterns",
+    "description": "Lambda, cold starts, event-driven design, API Gateway, and serverless frameworks",
+    "category": "Backend",
+    "tags": [
+      "serverless",
+      "lambda",
+      "cloud"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "business/event-staffing-compliance",
+    "name": "Event Staffing Compliance Assessment",
+    "description": "Assess worker classification and compliance risk for temporary event staffing in the US and Canada. ",
+    "category": "Business",
+    "tags": [
+      "compliance",
+      "w2",
+      "1099"
+    ],
+    "github": "",
+    "author": "tempguru"
+  },
+  {
+    "id": "business/event-staffing-ordering",
+    "name": "Ordering Event Staffing Through TempGuru",
+    "description": "Order W-2 compliant temporary event staff for conventions, trade shows, festivals, concerts, sportin",
+    "category": "Business",
+    "tags": [
+      "event-staffing",
+      "w2",
+      "brand-ambassadors"
+    ],
+    "github": "",
+    "author": "tempguru"
+  },
+  {
+    "id": "business/negotiation",
+    "name": "Negotiation Skill",
+    "description": "A comprehensive skill for mastering negotiation — from preparation and frameworks to tactics, multi-",
+    "category": "Business",
+    "tags": [
+      "negotiation",
+      "communication",
+      "business"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "business/startup-strategy",
+    "name": "Startup Strategy Skill",
+    "description": "A comprehensive skill for building and scaling startups — covering lean methodology, product-market ",
+    "category": "Business",
+    "tags": [
+      "startup",
+      "entrepreneurship",
+      "lean-startup"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "career/career-planning",
+    "name": "Career Planning",
+    "description": "Skills assessment, career frameworks, OKRs, mentorship, board of directors, and career pivots",
+    "category": "Career",
+    "tags": [
+      "career",
+      "planning",
+      "growth"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "career/interview-prep",
+    "name": "Interview Prep",
+    "description": "Behavioral frameworks, technical interview patterns, system design, coding, and negotiation prep",
+    "category": "Career",
+    "tags": [
+      "interview",
+      "career",
+      "job-search"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "career/linkedin-optimization",
+    "name": "LinkedIn Optimization",
+    "description": "Profile optimization, content strategy, networking, thought leadership, and personal branding",
+    "category": "Career",
+    "tags": [
+      "linkedin",
+      "career",
+      "networking"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "career/resume-writing",
+    "name": "Resume Writing",
+    "description": "ATS optimization, achievement frameworks (STAR, CAR), formatting, tailoring, and portfolio presentat",
+    "category": "Career",
+    "tags": [
+      "resume",
+      "career",
+      "job-search"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "career/salary-negotiation",
+    "name": "Salary Negotiation",
+    "description": "Market research, compensation benchmarking, BATNA, total comp analysis, and offer evaluation",
+    "category": "Career",
+    "tags": [
+      "salary",
+      "negotiation",
+      "career"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "creative-personal-development/content-repurposer",
+    "name": "Content Repurposer",
+    "description": "A content multiplication engine that transforms a single piece of content into multiple formats acro",
+    "category": "Personal Development",
+    "tags": [
+      "content-creation",
+      "repurposing",
+      "content-marketing"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "creative-personal-development/daily-standup-journal",
+    "name": "Daily Standup & Journal",
+    "description": "A structured reflection engine that generates daily standup prompts, journaling questions, and weekl",
+    "category": "Personal Development",
+    "tags": [
+      "journaling",
+      "standup",
+      "reflection"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "creative-personal-development/decision-matrix",
+    "name": "Decision Matrix",
+    "description": "A structured reasoning assistant that helps you make clear, confident decisions using proven framewo",
+    "category": "Personal Development",
+    "tags": [
+      "decision-making",
+      "frameworks",
+      "productivity"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "creative-personal-development/idea-validator",
+    "name": "Idea Validator",
+    "description": "A structured idea testing framework that runs every concept through a reality checklist before you i",
+    "category": "Personal Development",
+    "tags": [
+      "idea-validation",
+      "lean-startup",
+      "entrepreneurship"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "creative-personal-development/meeting-note-summarizer",
+    "name": "Meeting Note Summarizer",
+    "description": "Transforms messy meeting transcripts, notes, or voice memos into structured summaries with clear act",
+    "category": "Personal Development",
+    "tags": [
+      "meeting-notes",
+      "summarization",
+      "productivity"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "creative-personal-development/personal-branding-statement",
+    "name": "Personal Branding Statement Generator",
+    "description": "A personal brand coach that helps you articulate who you are, what you do, and why it matters. Gener",
+    "category": "Personal Development",
+    "tags": [
+      "personal-branding",
+      "positioning",
+      "copywriting"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "creative-personal-development/storytelling-advisor",
+    "name": "Storytelling Advisor",
+    "description": "A narrative architecture coach that guides you through proven story frameworks — Hero's Journey, Pix",
+    "category": "Personal Development",
+    "tags": [
+      "storytelling",
+      "narrative",
+      "creative-writing"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "creative-personal-development/time-blocking-scheduler",
+    "name": "Time Blocking & Scheduling Assistant",
+    "description": "A structured time management coach that designs deep work schedules, energy-aligned routines, and pr",
+    "category": "Personal Development",
+    "tags": [
+      "time-management",
+      "productivity",
+      "deep-work"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "data/data-pipeline",
+    "name": "Data Pipeline Design",
+    "description": "Comprehensive guide to data pipeline design, ETL/ELT patterns, data quality, monitoring, orchestrati",
+    "category": "Data",
+    "tags": [
+      "data-pipeline",
+      "etl",
+      "elt"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "design/accessibility",
+    "name": "Accessibility Skill",
+    "description": "Achieve and maintain WCAG compliance through inclusive design practices, proper ARIA usage, and comp",
+    "category": "Design",
+    "tags": [
+      "accessibility",
+      "wcag",
+      "inclusive-design"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "design/ui-design-system",
+    "name": "UI Design System Skill",
+    "description": "Master the creation, maintenance, and governance of design systems — from design tokens and componen",
+    "category": "Design",
+    "tags": [
+      "design-systems",
+      "ui-components",
+      "design-tokens"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "development/api-documentation",
+    "name": "API Documentation",
+    "description": "API Documentation: OpenAPI/Swagger specs, Postman collections, API reference patterns, and client SD",
+    "category": "Development",
+    "tags": [
+      "api-documentation",
+      "openapi",
+      "swagger"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "development/architecture-decision-records",
+    "name": "Architecture Decision Records",
+    "description": "ADR methodology, templates, decision capture workflows, and architectural governance patterns",
+    "category": "Development",
+    "tags": [
+      "adr",
+      "architecture",
+      "decisions"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "development/clean-code",
+    "name": "Clean Code",
+    "description": "Principles and practices for writing readable, maintainable, and testable code",
+    "category": "Development",
+    "tags": [
+      "clean-code",
+      "refactoring",
+      "best-practices"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "development/code-review",
+    "name": "Code Review",
+    "description": "Systematic code review methodology, PR checklist, feedback techniques, and review automation pattern",
+    "category": "Development",
+    "tags": [
+      "code-review",
+      "pull-requests",
+      "collaboration"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "development/debugging-mastery",
+    "name": "Debugging Mastery",
+    "description": "Structured debugging methodology, root cause analysis, logging strategies, and troubleshooting workf",
+    "category": "Development",
+    "tags": [
+      "debugging",
+      "troubleshooting",
+      "root-cause-analysis"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "development/dependency-management",
+    "name": "Dependency Management",
+    "description": "Version pinning, vulnerability scanning, monorepo patterns, and upgrade workflows",
+    "category": "Development",
+    "tags": [
+      "dependencies",
+      "package-management",
+      "security"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "development/documentation-generation",
+    "name": "Documentation Generation",
+    "description": "Effective technical documentation strategies, API docs, README patterns, and doc generation workflow",
+    "category": "Development",
+    "tags": [
+      "documentation",
+      "api-docs",
+      "readme"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "development/git-workflow",
+    "name": "Git Workflow",
+    "description": "Git best practices, branching strategies, commit conventions, and code review patterns",
+    "category": "Development",
+    "tags": [
+      "git",
+      "version-control",
+      "branching"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "development/hyperframes",
+    "name": "HyperFrames — Video Composition Authoring",
+    "description": "Create, compose, animate, and render HTML-based video compositions using HyperFrames — an open-sourc",
+    "category": "Development",
+    "tags": [
+      "hyperframes",
+      "video",
+      "animation"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "development/hyperframes-cli",
+    "name": "HyperFrames CLI — Dev Loop",
+    "description": "HyperFrames CLI dev loop — project scaffolding, validation (lint/inspect), browser preview with live",
+    "category": "Development",
+    "tags": [
+      "hyperframes",
+      "cli",
+      "video-rendering"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "development/hyperframes-media",
+    "name": "HyperFrames Media Preprocessing",
+    "description": "Asset preprocessing for HyperFrames compositions — local text-to-speech narration (Kokoro-82M, no AP",
+    "category": "Development",
+    "tags": [
+      "hyperframes",
+      "media",
+      "tts"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "development/knowledge-base",
+    "name": "Knowledge Base Creation",
+    "description": "Knowledge Base Creation: Searchable wikis, internal documentation portals, knowledge management syst",
+    "category": "Development",
+    "tags": [
+      "knowledge-base",
+      "wiki",
+      "internal-docs"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "development/markdown-mastery",
+    "name": "Markdown Mastery",
+    "description": "Markdown Mastery: Advanced markdown, Mermaid diagrams, GitHub-flavored markdown, formatting patterns",
+    "category": "Development",
+    "tags": [
+      "markdown",
+      "mermaid",
+      "diagrams"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "development/refactoring-patterns",
+    "name": "Refactoring Patterns",
+    "description": "Systematic refactoring techniques, code smell elimination, pattern extraction, and legacy modernizat",
+    "category": "Development",
+    "tags": [
+      "refactoring",
+      "code-quality",
+      "patterns"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "development/technical-writing",
+    "name": "Technical Writing Mastery",
+    "description": "Technical Writing Mastery: SOPs, user manuals, guides, release notes, and professional technical doc",
+    "category": "Development",
+    "tags": [
+      "technical-writing",
+      "sop",
+      "user-manual"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "development/testing-strategies",
+    "name": "Testing Strategies",
+    "description": "Comprehensive testing strategy covering unit, integration, e2e, property-based, and mutation testing",
+    "category": "Development",
+    "tags": [
+      "testing",
+      "unit-tests",
+      "integration-tests"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "devops/ci-cd-pipeline",
+    "name": "CI/CD Pipeline Design: From Commit to Production",
+    "description": "Design and implement production-grade CI/CD pipelines with GitHub Actions, layered testing strategie",
+    "category": "DevOps",
+    "tags": [
+      "ci-cd",
+      "github-actions",
+      "devops"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "devops/cloud-architecture",
+    "name": "Cloud Architecture",
+    "description": "Multi-cloud, VPC design, high availability, disaster recovery, and cost optimization",
+    "category": "DevOps",
+    "tags": [
+      "cloud",
+      "architecture",
+      "aws"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "devops/docker-patterns",
+    "name": "Docker Patterns: Production-Grade Containerization",
+    "description": "Master Dockerfile optimization, multi-stage builds, docker-compose patterns, security hardening, and",
+    "category": "DevOps",
+    "tags": [
+      "docker",
+      "containerization",
+      "devops"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "devops/kubernetes-patterns",
+    "name": "Kubernetes Patterns",
+    "description": "Pods, deployments, services, ingress, RBAC, autoscaling, and production cluster best practices",
+    "category": "DevOps",
+    "tags": [
+      "kubernetes",
+      "k8s",
+      "devops"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "devops/monitoring-observability",
+    "name": "Monitoring & Observability",
+    "description": "Prometheus, Grafana, ELK/Loki, Jaeger, metrics, logging, tracing, and alerting",
+    "category": "DevOps",
+    "tags": [
+      "monitoring",
+      "observability",
+      "prometheus"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "devops/sre-practices",
+    "name": "SRE Practices",
+    "description": "SLIs/SLOs/SLAs, error budgets, incident response, postmortems, and reliability patterns",
+    "category": "DevOps",
+    "tags": [
+      "sre",
+      "reliability",
+      "slo"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "devops/terraform-iac",
+    "name": "Terraform / Infrastructure as Code",
+    "description": "State management, modules, workspaces, remote backends, and multi-environment strategies",
+    "category": "DevOps",
+    "tags": [
+      "terraform",
+      "iac",
+      "infrastructure"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "education-learning/assessment-design",
+    "name": "Assessment Design",
+    "description": "Formative vs summative, rubric design, authentic assessment, competency-based evaluation, and feedba",
+    "category": "Education",
+    "tags": [
+      "assessment",
+      "education",
+      "evaluation"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "education-learning/curriculum-design",
+    "name": "Curriculum Design",
+    "description": "Learning objectives (Bloom\\'s), scope and sequence, assessment, instructional strategies, and mappin",
+    "category": "Education",
+    "tags": [],
+    "github": "",
+    "author": "community"
+  },
+  {
+    "id": "education-learning/learning-science",
+    "name": "Learning Science",
+    "description": "Spaced repetition, active recall, interleaving, dual coding, metacognition, and study techniques",
+    "category": "Education",
+    "tags": [
+      "learning",
+      "science",
+      "memory"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "education-learning/micro-learning",
+    "name": "Micro-Learning",
+    "description": "Content chunking, mobile-first learning, spaced delivery, engagement patterns, and platform best pra",
+    "category": "Education",
+    "tags": [
+      "micro-learning",
+      "education",
+      "mobile-learning"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "education-learning/teaching-methods",
+    "name": "Teaching Methods",
+    "description": "Direct instruction, inquiry-based, project-based, flipped classroom, differentiation, and assessment",
+    "category": "Education",
+    "tags": [
+      "teaching",
+      "education",
+      "methods"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "finance-legal/budgeting-forecasting",
+    "name": "Budgeting & Forecasting",
+    "description": "Zero-based budgeting, rolling forecasts, variance analysis, scenario planning, and budget management",
+    "category": "Finance & Legal",
+    "tags": [
+      "budgeting",
+      "forecasting",
+      "finance"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "finance-legal/contract-review",
+    "name": "Contract Review",
+    "description": "Contract types, key clauses (indemnification, liability, termination), redlining, and negotiation st",
+    "category": "Finance & Legal",
+    "tags": [
+      "contract",
+      "legal",
+      "review"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "finance-legal/financial-analysis",
+    "name": "Financial Analysis",
+    "description": "Ratio analysis, cash flow, ROI, break-even, forecasting, and financial storytelling",
+    "category": "Finance & Legal",
+    "tags": [
+      "finance",
+      "analysis",
+      "ratios"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "finance-legal/privacy-compliance",
+    "name": "Privacy & Compliance",
+    "description": "GDPR, CCPA, HIPAA, data mapping, consent management, DSR handling, and privacy program management",
+    "category": "Finance & Legal",
+    "tags": [
+      "privacy",
+      "compliance",
+      "gdpr"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "finance-legal/risk-management",
+    "name": "Risk Management",
+    "description": "Risk identification, assessment matrices, mitigation strategies, BCP, and risk reporting",
+    "category": "Finance & Legal",
+    "tags": [
+      "risk",
+      "management",
+      "compliance"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "frontend/component-design-systems",
+    "name": "Component Design Systems",
+    "description": "Building and maintaining scalable component libraries, design tokens, accessibility, and cross-team ",
+    "category": "Frontend",
+    "tags": [
+      "design-systems",
+      "components",
+      "react"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "frontend/frontend-testing",
+    "name": "Frontend Testing",
+    "description": "Comprehensive frontend testing strategy covering unit, integration, E2E, visual regression, and acce",
+    "category": "Frontend",
+    "tags": [
+      "testing",
+      "frontend",
+      "vitest"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "frontend/nextjs-patterns",
+    "name": "Next.js Patterns",
+    "description": "Next.js best practices, server components, app router patterns, caching strategies, and full-stack a",
+    "category": "Frontend",
+    "tags": [
+      "nextjs",
+      "react",
+      "server-components"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "frontend/react-patterns",
+    "name": "React Patterns",
+    "description": "Component patterns, hooks, state management, and performance optimization for React applications",
+    "category": "Frontend",
+    "tags": [
+      "react",
+      "hooks",
+      "state-management"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "frontend/responsive-design",
+    "name": "Responsive Design",
+    "description": "Responsive web design patterns, mobile-first CSS, container queries, fluid typography, and accessibi",
+    "category": "Frontend",
+    "tags": [
+      "responsive-design",
+      "css",
+      "mobile-first"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "frontend/state-management",
+    "name": "State Management",
+    "description": "Modern frontend state management patterns, tools, architecture decisions, and scalability patterns",
+    "category": "Frontend",
+    "tags": [
+      "state-management",
+      "react",
+      "zustand"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "frontend/tailwind-css",
+    "name": "Tailwind CSS",
+    "description": "Best practices for utility-first CSS with Tailwind, responsive design, and component patterns",
+    "category": "Frontend",
+    "tags": [
+      "tailwind",
+      "css",
+      "responsive-design"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "frontend/web-performance",
+    "name": "Web Performance",
+    "description": "Web performance optimization patterns, Core Web Vitals, lazy loading, code splitting, caching strate",
+    "category": "Frontend",
+    "tags": [
+      "performance",
+      "web-vitals",
+      "lighthouse"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "health-wellness/fitness-planning",
+    "name": "Fitness Planning",
+    "description": "Workout programming (strength, cardio, flexibility), progressive overload, periodization, and tracki",
+    "category": "Health & Wellness",
+    "tags": [
+      "fitness",
+      "health",
+      "workout"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "health-wellness/habit-formation",
+    "name": "Habit Formation",
+    "description": "Atomic habits, cue-routine-reward loops, habit stacking, accountability systems, and behavior change",
+    "category": "Health & Wellness",
+    "tags": [
+      "habits",
+      "behavior-change",
+      "productivity"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "health-wellness/mental-health",
+    "name": "Mental Health",
+    "description": "Mindfulness, stress management, CBT principles, sleep hygiene, boundaries, and professional help",
+    "category": "Health & Wellness",
+    "tags": [
+      "mental-health",
+      "mindfulness",
+      "stress"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "health-wellness/nutrition-planning",
+    "name": "Nutrition Planning",
+    "description": "Macronutrients, meal prep, dietary patterns, supplementation, hydration, and sustainable eating",
+    "category": "Health & Wellness",
+    "tags": [
+      "nutrition",
+      "health",
+      "diet"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "health-wellness/sleep-optimization",
+    "name": "Sleep Optimization",
+    "description": "Circadian rhythms, sleep hygiene protocols, sleep tracking, environment design, and recovery",
+    "category": "Health & Wellness",
+    "tags": [
+      "sleep",
+      "health",
+      "wellness"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "marketing/content-creation",
+    "name": "Content Creation",
+    "description": "Comprehensive guide to strategic content creation covering content strategy, writing frameworks, opt",
+    "category": "Marketing",
+    "tags": [
+      "content-creation",
+      "content-strategy",
+      "copywriting"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "marketing/local-business-growth",
+    "name": "Local Business Growth Skills",
+    "description": "A mini marketing agency in skill form — 7 practical, actionable marketing skills designed for local ",
+    "category": "Marketing",
+    "tags": [
+      "local-business",
+      "marketing",
+      "growth"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "marketing/seo-strategy",
+    "name": "SEO Strategy",
+    "description": "Comprehensive guide to search engine optimization strategy covering technical SEO, content optimizat",
+    "category": "Marketing",
+    "tags": [
+      "seo",
+      "search-engine-optimization",
+      "technical-seo"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "media-download/audio-extraction",
+    "name": "Audio Extraction",
+    "description": "Audio Extraction: Extracting audio from videos, converting formats, and managing audio collections",
+    "category": "Media",
+    "tags": [
+      "audio-extraction",
+      "mp3-conversion",
+      "audio-conversion"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "media-download/github-repo-promo",
+    "name": "GitHub Repo Promo Video",
+    "description": "Generate 1080x1920 Instagram Reels video promos for GitHub repositories using HyperFrames. 7-beat st",
+    "category": "Media",
+    "tags": [
+      "hyperframes",
+      "video-generation",
+      "github"
+    ],
+    "github": "",
+    "author": "hotheadhacker"
+  },
+  {
+    "id": "media-download/github-repo-tour",
+    "name": "GitHub Repo Tour — Scrolling Video with Synced Narration & Subtitles",
+    "description": "Generate a 15-30 second scrolling video tour of any GitHub repository page with ElevenLabs AI narrat",
+    "category": "Media",
+    "tags": [
+      "hyperframes",
+      "video-generation",
+      "github"
+    ],
+    "github": "",
+    "author": "hotheadhacker"
+  },
+  {
+    "id": "media-download/legal-downloading",
+    "name": "Legal Downloading",
+    "description": "Legal Downloading: Copyright-aware downloading, content that allows offline access, podcast tools, a",
+    "category": "Media",
+    "tags": [
+      "legal-downloading",
+      "copyright-compliance",
+      "offline-access"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "media-download/playlist-archiver",
+    "name": "Playlist Archiver",
+    "description": "Playlist Archiver: Backup playlists, archive channels, scheduled downloading, and offline media libr",
+    "category": "Media",
+    "tags": [
+      "playlist-archiver",
+      "playlist-backup",
+      "channel-archive"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "media-download/video-downloader",
+    "name": "Video Downloader",
+    "description": "Video Downloader: Using yt-dlp to download videos from YouTube, Bilibili, Twitter, and thousands of ",
+    "category": "Media",
+    "tags": [
+      "video-download",
+      "yt-dlp",
+      "youtube-downloader"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "mobile/android-kotlin-patterns",
+    "name": "Android Kotlin Patterns",
+    "description": "Jetpack Compose, MVVM, Room, Coroutines, DI with Dagger/Hilt, and Play Store submission",
+    "category": "Mobile",
+    "tags": [
+      "android",
+      "kotlin",
+      "jetpack-compose"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "mobile/app-store-optimization",
+    "name": "App Store Optimization (ASO)",
+    "description": "Keyword research, title/subtitle strategy, screenshots, ratings, A/B testing, and conversion optimiz",
+    "category": "Mobile",
+    "tags": [
+      "aso",
+      "app-store",
+      "mobile"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "mobile/ios-swift-patterns",
+    "name": "iOS Swift Patterns",
+    "description": "SwiftUI, UIKit, MVVM, Combine, async/await, Core Data, and App Store submission patterns",
+    "category": "Mobile",
+    "tags": [
+      "ios",
+      "swift",
+      "swiftui"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "mobile/mobile-performance",
+    "name": "Mobile Performance",
+    "description": "App startup, memory management, battery efficiency, network optimization, and profiling tools",
+    "category": "Mobile",
+    "tags": [
+      "mobile",
+      "performance",
+      "profiling"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "mobile/react-native-patterns",
+    "name": "React Native Patterns",
+    "description": "Navigation, state management, native modules, performance, animations, and cross-platform strategies",
+    "category": "Mobile",
+    "tags": [
+      "react-native",
+      "mobile",
+      "cross-platform"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "pdf-generation/any2pdf",
+    "name": "any2pdf — Markdown to Professionally Typeset PDF",
+    "description": "Convert Markdown to publication-quality PDF with reportlab — CJK/Latin mixed text, themes, cover pag",
+    "category": "PDF Generation",
+    "tags": [
+      "markdown",
+      "pdf",
+      "cjk"
+    ],
+    "github": "",
+    "author": "lovstudio"
+  },
+  {
+    "id": "pdf-generation/invoice-document-pdf",
+    "name": "Invoice & Document PDF Generation",
+    "description": "Generating invoices, contracts, forms, receipts, and business documents as professional PDFs",
+    "category": "PDF Generation",
+    "tags": [
+      "invoice",
+      "pdf-generation",
+      "business-documents"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "pdf-generation/markdown-to-pdf",
+    "name": "Markdown to PDF Conversion",
+    "description": "Converting Markdown to professional PDFs using Pandoc, WeasyPrint, ReportLab, and related tools",
+    "category": "PDF Generation",
+    "tags": [
+      "markdown",
+      "pdf",
+      "pandoc"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "pdf-generation/report-generation",
+    "name": "Report Generation",
+    "description": "Creating structured PDF reports from data, templates, and AI-generated content using professional to",
+    "category": "PDF Generation",
+    "tags": [
+      "report-generation",
+      "pdf-report",
+      "data-to-pdf"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "pdf-generation/typesetting-latex",
+    "name": "LaTeX Typesetting",
+    "description": "Professional document preparation with LaTeX for academic papers, resumes, books, presentations, and",
+    "category": "PDF Generation",
+    "tags": [
+      "latex",
+      "typesetting",
+      "academic"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "presentation/data-storytelling",
+    "name": "Data Storytelling for Slides",
+    "description": "Data Storytelling for Slides: Charts, graphs, data visualization, and narrative techniques for prese",
+    "category": "Presentation",
+    "tags": [
+      "data-storytelling",
+      "data-viz",
+      "charts"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "presentation/pitch-deck-creation",
+    "name": "Pitch Deck Creation",
+    "description": "Pitch Deck Creation: Investor pitch decks, Y Combinator applications, Product Hunt launches, and sta",
+    "category": "Presentation",
+    "tags": [
+      "pitch-deck",
+      "fundraising",
+      "startup"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "presentation/presentation-automation",
+    "name": "Presentation Automation",
+    "description": "Presentation Automation: python-pptx, Google Slides API, automated slide generation from data and te",
+    "category": "Presentation",
+    "tags": [
+      "presentation-automation",
+      "python-pptx",
+      "google-slides-api"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "presentation/presentation-design",
+    "name": "Presentation Design & Storyboarding",
+    "description": "Presentation Design & Storyboarding: Slide design principles, visual hierarchy, layout, typography, ",
+    "category": "Presentation",
+    "tags": [
+      "presentation",
+      "slide-design",
+      "storyboarding"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "product/product-strategy",
+    "name": "Product Strategy",
+    "description": "A comprehensive skill for product strategy — covering frameworks, opportunity sizing, prioritization",
+    "category": "Product",
+    "tags": [
+      "product-strategy",
+      "north-star",
+      "opportunity-solution-tree"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "product/user-research",
+    "name": "User Research",
+    "description": "A comprehensive skill for user research — covering research methods, interview techniques, participa",
+    "category": "Product",
+    "tags": [
+      "user-research",
+      "generative-research",
+      "evaluative-research"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "security/secure-coding",
+    "name": "Secure Coding Skill",
+    "description": "Comprehensive secure coding practices covering input validation, authentication, authorization, cryp",
+    "category": "Security",
+    "tags": [
+      "secure-coding",
+      "input-validation",
+      "authentication"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "security/security-audit",
+    "name": "Security Audit Skill",
+    "description": "Comprehensive security audit methodology covering OWASP Top 10, dependency scanning, threat modeling",
+    "category": "Security",
+    "tags": [
+      "security-audit",
+      "owasp-top-10",
+      "threat-modeling"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "shop-restaurant/amazon-assistant",
+    "name": "Amazon Assistant 🛒",
+    "description": "Headless Amazon assistant — cookie-based session reuse to search, compare, sort, manage cart, track ",
+    "category": "Shop & Restaurant",
+    "tags": [
+      "amazon",
+      "shopping",
+      "browser-automation"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "shop-restaurant/daily-pulse",
+    "name": "Daily Pulse",
+    "description": "Generate a daily business snapshot — sales, labor cost, COGS, covers, and P&L flash report — so the ",
+    "category": "Shop & Restaurant",
+    "tags": [
+      "daily-reporting",
+      "p-and-l",
+      "sales-tracking"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "shop-restaurant/inventory-optimizer",
+    "name": "Inventory Optimizer",
+    "description": "Intelligently manage stock levels, generate supplier orders, and prevent shortages or overstock. Tra",
+    "category": "Shop & Restaurant",
+    "tags": [
+      "inventory",
+      "ordering",
+      "suppliers"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "shop-restaurant/menu-engineer",
+    "name": "Menu Engineer",
+    "description": "Optimize menu pricing, placement, and item mix to maximize profitability. Uses menu engineering fram",
+    "category": "Shop & Restaurant",
+    "tags": [
+      "menu-engineering",
+      "pricing",
+      "profitability"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "shop-restaurant/price-scout",
+    "name": "Price Scout",
+    "description": "Track and compare supplier prices across multiple vendors to reduce COGS. Monitors price changes, id",
+    "category": "Shop & Restaurant",
+    "tags": [
+      "procurement",
+      "supplier-management",
+      "price-comparison"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "shop-restaurant/review-responder",
+    "name": "Review Responder",
+    "description": "Monitor customer reviews across platforms and generate thoughtful, brand-aligned responses. Flags ur",
+    "category": "Shop & Restaurant",
+    "tags": [
+      "reviews",
+      "reputation-management",
+      "customer-feedback"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "shop-restaurant/social-post",
+    "name": "Social Post",
+    "description": "Generate engaging social media content for a shop or restaurant — daily specials, behind-the-scenes,",
+    "category": "Shop & Restaurant",
+    "tags": [
+      "social-media",
+      "content-creation",
+      "marketing"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "shop-restaurant/staff-scheduler",
+    "name": "Staff Scheduler",
+    "description": "Build optimized staff schedules that match coverage to demand while respecting labor budgets, employ",
+    "category": "Shop & Restaurant",
+    "tags": [
+      "staff-scheduling",
+      "shift-management",
+      "labor-cost"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "shop-restaurant/table-manager",
+    "name": "Table Manager",
+    "description": "Optimize table turns, manage reservations, and reduce wait times to maximize revenue per seat. Handl",
+    "category": "Shop & Restaurant",
+    "tags": [
+      "reservations",
+      "table-management",
+      "seating"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "shop-restaurant/zomato-order",
+    "name": "Zomato Order Skill 🛵",
+    "description": "Order food from Zomato via browser automation. Uses a two-phase approach: Phase 1 (setup) captures l",
+    "category": "Shop & Restaurant",
+    "tags": [
+      "zomato",
+      "food-ordering",
+      "browser-automation"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "testing-qa/accessibility-testing",
+    "name": "Accessibility Testing",
+    "description": "WCAG 2.1/2.2 audit, axe, Lighthouse, manual testing, screen reader testing, and remediation",
+    "category": "Testing & QA",
+    "tags": [
+      "accessibility",
+      "a11y",
+      "testing"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "testing-qa/api-testing",
+    "name": "API Testing",
+    "description": "REST and GraphQL testing, Postman/Insomnia patterns, contract testing, schema validation, and monito",
+    "category": "Testing & QA",
+    "tags": [
+      "api",
+      "testing",
+      "rest"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "testing-qa/e2e-testing",
+    "name": "E2E Testing",
+    "description": "Playwright and Cypress patterns, selectors, assertions, API mocking, visual testing, and CI/CD",
+    "category": "Testing & QA",
+    "tags": [
+      "e2e",
+      "testing",
+      "playwright"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "testing-qa/performance-testing",
+    "name": "Performance Testing",
+    "description": "Load, stress, spike testing with k6/Locust, bottleneck analysis, and performance test automation",
+    "category": "Testing & QA",
+    "tags": [
+      "performance",
+      "testing",
+      "load-testing"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  },
+  {
+    "id": "testing-qa/test-strategy",
+    "name": "Test Strategy",
+    "description": "Test pyramid, risk-based testing, test planning, coverage metrics, and SDLC integration",
+    "category": "Testing & QA",
+    "tags": [
+      "testing",
+      "strategy",
+      "qa"
+    ],
+    "github": "",
+    "author": "cosmicstack-labs"
+  }
+]

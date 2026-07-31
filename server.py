@@ -17,6 +17,7 @@ import json
 import logging
 import secrets
 import time
+from pathlib import Path
 
 import aiohttp
 from aiohttp import web, WSMsgType
@@ -78,9 +79,23 @@ html,body{height:100%;background:#0a0a0a;overflow:hidden;font-family:-apple-syst
   <div id="toolbar">
     <button onclick="doReconnect()">↻ 重连</button>
     <button onclick="doNewSession()">+ 新会话</button>
+    <button onclick="showSkillStore()">🏪 商店</button>
     <button onclick="doLogout()">退出</button>
   </div>
   <div id="term"></div>
+</div>
+<div id="skill-store" style="display:none;height:100vh;overflow-y:auto;background:#0a0a0a;padding:16px">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+    <h2 style="color:#f0e6d2;font-size:1.2rem">🏪 Skill 商店</h2>
+    <button onclick="closeSkillStore()" style="background:#333;border:none;color:#999;padding:6px 12px;border-radius:6px;cursor:pointer">✕ 关闭</button>
+  </div>
+  <input id="skill-search" type="text" placeholder="搜索技能..." oninput="filterSkills()" style="width:100%;padding:10px;border:1px solid #333;border-radius:8px;background:#111;color:#f0e6d2;font-size:.9rem;margin-bottom:12px;outline:none">
+  <div id="skill-cats" style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px"></div>
+  <div id="skill-list" style="display:grid;gap:10px"></div>
+  <hr style="border-color:#222;margin:20px 0">
+  <h3 style="color:#f0e6d2;font-size:1rem;margin-bottom:12px">➕ 添加自定义 Skill</h3>
+  <input id="custom-url" type="text" placeholder="SKILL.md 的 URL 或 GitHub 仓库地址" style="width:100%;padding:10px;border:1px solid #333;border-radius:8px;background:#111;color:#f0e6d2;font-size:.9rem;margin-bottom:8px;outline:none">
+  <button onclick="installCustomSkill()" style="background:#0ea5e9;border:none;color:#fff;padding:8px 16px;border-radius:8px;cursor:pointer">安装自定义 Skill</button>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/@xterm/xterm@5.5.0/lib/xterm.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@xterm/addon-fit@0.10.0/lib/addon-fit.js"></script>
@@ -165,6 +180,66 @@ function getFontSize(){return window.innerWidth<400?11:window.innerWidth<700?13:
 function doReconnect(){const a=document.getElementById('agent-sel').value;if(a)connectWS(a,password,false)}
 function doNewSession(){const a=document.getElementById('agent-sel').value;if(a)connectWS(a,password,true)}
 function doLogout(){if(ws)ws.close();loginEl.style.display='flex';termWrap.style.display='none';loadAgents()}
+
+/* ── Skill Store ── */
+let allSkills=[];
+let activeCat='all';
+async function showSkillStore(){
+  document.getElementById('term-wrap').style.display='none';
+  document.getElementById('skill-store').style.display='block';
+  const list=document.getElementById('skill-list');
+  list.innerHTML='<div style="color:#888;text-align:center;padding:40px">加载中...</div>';
+  try{
+    const r=await fetch('/api/skills');
+    allSkills=await r.json();
+    renderCats();
+    renderSkills();
+  }catch(e){list.innerHTML='<div style="color:#ef4444;text-align:center;padding:40px">加载失败</div>'}
+}
+function renderCats(){
+  const cats={};
+  allSkills.forEach(s=>{const c=s.category||'other';cats[c]=(cats[c]||0)+1});
+  const el=document.getElementById('skill-cats');
+  let html='<button onclick="setCat(\'all\')" style="background:'+(activeCat==='all'?'#0ea5e9':'#222')+';border:none;color:#fff;padding:4px 10px;border-radius:12px;font-size:.75rem;cursor:pointer">全部 '+allSkills.length+'</button>';
+  Object.entries(cats).sort((a,b)=>b[1]-a[1]).forEach(([c,n])=>{
+    html+='<button onclick="setCat(\''+c+'\')" style="background:'+(activeCat===c?'#0ea5e9':'#222')+';border:none;color:#ccc;padding:4px 10px;border-radius:12px;font-size:.75rem;cursor:pointer">'+c+' '+n+'</button>';
+  });
+  el.innerHTML=html;
+}
+function setCat(c){activeCat=c;renderCats();renderSkills()}
+function filterSkills(){renderSkills()}
+function renderSkills(){
+  const q=(document.getElementById('skill-search')?.value||'').toLowerCase();
+  const list=document.getElementById('skill-list');
+  let filtered=allSkills;
+  if(activeCat!=='all')filtered=filtered.filter(s=>s.category===activeCat);
+  if(q)filtered=filtered.filter(s=>(s.name+' '+(s.description||'')+' '+(s.tags||[]).join(' ')).toLowerCase().includes(q));
+  if(!filtered.length){list.innerHTML='<div style="color:#888;text-align:center;padding:20px">没有找到技能</div>';return}
+  list.innerHTML='';
+  filtered.slice(0,50).forEach(s=>{
+    const card=document.createElement('div');
+    card.style.cssText='background:#1a1a1a;border:1px solid #222;border-radius:10px;padding:12px';
+    const tagsHtml=(s.tags||[]).slice(0,3).map(t=>'<span style="background:#0ea5e915;color:#0ea5e9;padding:2px 6px;border-radius:4px;font-size:.65rem;margin-right:3px">'+t+'</span>').join('');
+    card.innerHTML='<div style="display:flex;justify-content:space-between;align-items:start"><div style="flex:1;min-width:0"><div style="color:#f0e6d2;font-size:.9rem;font-weight:600">'+s.name+'</div><div style="color:#888;font-size:.75rem;margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+(s.description||'')+'</div><div style="margin-top:6px">'+tagsHtml+'<span style="color:#555;font-size:.65rem">'+(s.category||'')+'</span></div></div><button onclick="installSkill(\''+s.id+'\',\''+s.name.replace(/'/g,"\\\\'")+'\')" style="background:#0ea5e9;border:none;color:#fff;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:.75rem;white-space:nowrap;margin-left:10px;flex-shrink:0">安装</button></div>';
+    list.appendChild(card);
+  });
+}
+function closeSkillStore(){document.getElementById('skill-store').style.display='none';document.getElementById('term-wrap').style.display='block'}
+function installSkill(id,name){
+  if(!ws||ws.readyState!==1){alert('请先连接Agent');return}
+  ws.send('请从 GitHub 安装 skill: '+id+'\\r');
+  alert('已发送安装指令: '+name);
+  closeSkillStore();
+}
+function installCustomSkill(){
+  const url=document.getElementById('custom-url').value.trim();
+  if(!url){alert('请输入URL');return}
+  if(!ws||ws.readyState!==1){alert('请先连接Agent');return}
+  ws.send('请安装自定义 skill，来源: '+url+'\\r');
+  alert('已发送安装指令');
+  document.getElementById('custom-url').value='';
+  closeSkillStore();
+}
 </script>
 </body>
 </html>"""
@@ -184,6 +259,18 @@ async def handle_agents(request: web.Request) -> web.Response:
         for aid, a in agents.items()
     ]
     return web.json_response(result)
+
+
+async def handle_skills(request: web.Request) -> web.Response:
+    """List available skills from registry."""
+    registry_path = Path(__file__).parent / "skill-registry.json"
+    if not registry_path.exists():
+        return web.json_response([])
+    try:
+        skills = json.loads(registry_path.read_text())
+        return web.json_response(skills)
+    except Exception:
+        return web.json_response([])
 
 
 async def handle_agent_ws(request: web.Request) -> web.WebSocketResponse:
@@ -295,6 +382,7 @@ async def run_server(host: str, port: int, client_password: str, agent_secret: s
     app["agent_secret"] = agent_secret
     app.router.add_get("/", handle_index)
     app.router.add_get("/agents", handle_agents)
+    app.router.add_get("/api/skills", handle_skills)
     app.router.add_get("/ws/agent", handle_agent_ws)
     app.router.add_get("/ws/client", handle_client_ws)
 
